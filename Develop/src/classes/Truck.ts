@@ -56,9 +56,15 @@ constructor(
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
     // TODO: Get the make an model of the vehicle if it exists
+    const vehicleMake: string = vehicle.getMake() ? vehicle.getMake() : 'Unknown Make';
+    const vehicleModel: string = vehicle.getModel() ? vehicle.getModel() : 'Unknown Model';
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
     // TODO: If it is, log that the vehicle is being towed
     // TODO: If it is not, log that the vehicle is too heavy to be towed
+    if (vehicle.weight <= this.towingCapacity) {
+      console.log(`Towing ${vehicleMake} ${vehicleModel}`);
+    } else {
+      console.log(`Vehicle is too heavy to be towed`);
   }
 
   // TODO: Override the printDetails method from the Vehicle class
