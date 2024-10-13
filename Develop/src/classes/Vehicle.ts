@@ -12,6 +12,9 @@ class Vehicle implements Driveable {
     this.started = false;
     this.currentSpeed = 0;
   }
+  getVin(): string { return 'VIN Unknown'; }
+  getMake(): string { return 'Make Unknown'; }
+  getModel(): string { return 'Model Unknown'; }
 
   // Method to print vehicle details
   printDetails(): void {
