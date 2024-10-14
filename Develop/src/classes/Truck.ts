@@ -25,20 +25,20 @@ class Truck extends Vehicle implements AbleToTow {
   // TODO: The constructor should initialize the properties of the Truck class
   // TODO: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
 constructor(
+  vin: string,
+  color: string,
+  make: string,
+  model: string,
+  year: number, 
   weight: number,
   topSpeed: number,
   wheels: Wheel[],
   towingCapacity: number,
-  year: number,
-  make: string,
-  model: string,
-  color: string,
-  vin: string
+  
 ) {
   super();
   this.weight = weight;
   this.topSpeed = topSpeed;
-  
   this.towingCapacity = towingCapacity;
   this.year = year;
   this.make = make;

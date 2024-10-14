@@ -36,9 +36,6 @@ const motorbike1 = new Motorbike(Cli.generateVin(), "black", "Harley Davidson", 
 vehicles.push(truck1);
 vehicles.push(car1);
 vehicles.push(motorbike1);
-// TODO: uncomment once trucks are implemented
-const truck1 = new Truck(Cli.generateVin(), 'red', 'Ford', 'F-150', 2021, 5000, 120, [], 10000);
-vehicles.push(truck1);
 vehicles.push(car1);
 // TODO: uncomment once motorbikes are implemented
 vehicles.push(motorbike1);
