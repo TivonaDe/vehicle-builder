@@ -252,7 +252,7 @@ class Cli {
           choices: this.vehicles.map((vehicle) => {
             return {
               name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
-              value: vehicle,
+              value: vehicle.getVin(),
             };
           }),
         },
@@ -261,6 +261,8 @@ class Cli {
         // TODO: check if the selected vehicle is the truck
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+        this.selectedVehicleVin = answers.vehicleToTow.vin;
+        this.performActions();
       });
   }
 
