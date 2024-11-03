@@ -12,6 +12,9 @@ class Vehicle implements Driveable {
     this.started = false;
     this.currentSpeed = 0;
   }
+  tow(): void {
+    throw new Error('Method not implemented.');
+  }
   getVin(): string { return 'VIN Unknown'; }
   getMake(): string { return 'Make Unknown'; }
   getModel(): string { return 'Model Unknown'; }
@@ -76,6 +79,7 @@ class Vehicle implements Driveable {
       console.log('Start the vehicle first');
     }
   }
+
 }
 
 // Export the Vehicle class

@@ -4,7 +4,7 @@ import Car from "./classes/Car.js";
 import Motorbike from "./classes/Motorbike.js";
 import Wheel from "./classes/Wheel.js";
 import Cli from "./classes/Cli.js";
-import Vehicle from "./classes/Vehicle.js";
+
 
 
 // create an array of vehicles

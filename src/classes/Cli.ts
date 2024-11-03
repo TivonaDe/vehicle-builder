@@ -335,6 +335,8 @@ performActions(): void {
         'Turn left',
         'Reverse',
         'Select or create another vehicle',
+        'Tow',
+        'Wheelie',
         'Exit',
       ],
     },
@@ -399,7 +401,32 @@ performActions(): void {
         }
       }
       // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
+      else if (answers.action === 'Tow') {
+        for (let i = 0; i < this.vehicles.length; i++) {
+          if (this.vehicles[i].vin === this.selectedVehicleVin) {
+            if (this.vehicles[i] instanceof Truck) {
+              this.findVehicleToTow();
+              return;
+            } else {
+              console.log('Only Trucks can Tow vechicels');
+            }
+          }
+        }
+      }
       // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
+      else if (answers.action === 'Wheelie') {
+        for (let i = 0; i < this.vehicles.length; i++) {
+          if (this.vehicles[i].vin === this.selectedVehicleVin) {
+            if (this.vehicles[i] instanceof Motorbike) {
+              (this.vehicles[i] as Motorbike).wheelie();
+            } else {
+              console.log('Only Motorbikes can perform a wheelie');
+            }
+          }
+        }
+      }
+
+
       else if (answers.action === 'Select or create another vehicle') {
         // start the cli to return to the initial prompt if the user wants to select or create another vehicle
         this.startCli();
